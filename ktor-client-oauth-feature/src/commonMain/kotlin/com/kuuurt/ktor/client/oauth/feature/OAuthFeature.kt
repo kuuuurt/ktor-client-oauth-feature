@@ -1,12 +1,14 @@
 package com.kuuurt.ktor.client.oauth.feature
 
 import io.ktor.client.HttpClient
+import io.ktor.client.call.HttpClientCall
 import io.ktor.client.features.HttpClientFeature
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.HttpRequestPipeline
 import io.ktor.client.request.header
 import io.ktor.client.request.takeFrom
 import io.ktor.client.statement.HttpReceivePipeline
+import io.ktor.client.statement.HttpResponse
 import io.ktor.client.utils.EmptyContent
 import io.ktor.http.HttpStatusCode
 import io.ktor.util.AttributeKey
@@ -48,20 +50,19 @@ class OAuthFeature(
             scope.receivePipeline.intercept(HttpReceivePipeline.After) {
                 // Request is unauthorized
                 if (subject.status == HttpStatusCode.Unauthorized) {
-                    try {
-                        // Refresh the Token
-                        feature.refreshToken()
+                    // Refresh the Token
+                    feature.refreshToken()
 
-                        // Retry the request
-                        scope.requestPipeline.execute(
-                            HttpRequestBuilder().takeFrom(context.request),
-                            EmptyContent
-                        )
-                        finish()
-                        return@intercept
-                    } catch (exception: Exception) {
-                        // If refresh fails, proceed normally as 401
-                    }
+                    // Retry the request
+                    val call = scope.requestPipeline.execute(
+                        HttpRequestBuilder().takeFrom(context.request),
+                        EmptyContent
+                    ) as HttpClientCall
+
+                    // Proceed with the new request
+                    proceedWith(call.response)
+
+                    return@intercept
                 }
                 // Request is authorized
                 proceedWith(subject)
