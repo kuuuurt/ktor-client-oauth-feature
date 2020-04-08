@@ -63,6 +63,9 @@ val pomLicenseDist = "repo"
 val pomDeveloperId = "kuuuurt"
 val pomDeveloperName = "Kurt Renzo Acosta"
 
+group = artifactGroup
+version = artifactVersion
+
 publishing {
     publications.withType<MavenPublication>().forEach {
         it.pom.withXml {
