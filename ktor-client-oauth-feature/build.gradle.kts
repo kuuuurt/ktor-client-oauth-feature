@@ -45,7 +45,7 @@ kotlin {
  **/
 
 val artifactName = "ktor-client-oauth-feature"
-val artifactGroup = "com.kuuurt"
+val artifactGroup = "com.kuuuurt"
 val artifactVersion = "0.1.1"
 
 val pomUrl = "https://github.com/kuuuurt/ktor-client-oauth-feature"
