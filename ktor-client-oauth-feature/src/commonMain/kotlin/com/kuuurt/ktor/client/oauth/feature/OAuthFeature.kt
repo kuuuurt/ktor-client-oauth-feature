@@ -37,19 +37,21 @@ class OAuthFeature(
             return OAuthFeature(config.getToken, config.refreshToken)
         }
 
+        private val RefreshKey = "Ktor-OAuth-Refresh"
+
         override fun install(feature: OAuthFeature, scope: HttpClient) {
             scope.requestPipeline.intercept(HttpRequestPipeline.State) {
-                // Remove Authorization if available (From retried requests)
-                context.headers.remove("Authorization")
+                // Add Refresh Header for handling infinite loop on 401s
+                context.headers[RefreshKey] = context.headers.contains("Authorization").toString()
 
                 // Add Authorization Header
-                context.header("Authorization", "Bearer ${feature.getToken()}")
+                context.headers["Authorization"] = "Bearer ${feature.getToken()}"
 
                 proceed()
             }
             scope.receivePipeline.intercept(HttpReceivePipeline.After) {
                 // Request is unauthorized
-                if (subject.status == HttpStatusCode.Unauthorized) {
+                if (subject.status == HttpStatusCode.Unauthorized && context.request.headers[RefreshKey] != true.toString()) {
                     // Refresh the Token
                     feature.refreshToken()
 
