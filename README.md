@@ -9,7 +9,7 @@ Just install the feature in your `HttpClient` and tell it how to:
 1. Get the access token
     - Get it from your cache or somewhere where you can update the token
 2. How to refresh the token
-    - This function should get your new token update the token which `getToken` is using 
+    - This function should get your new token then update the token which `getToken` is using 
 
 ```kotlin
 HttpClient(yourEngine) {
