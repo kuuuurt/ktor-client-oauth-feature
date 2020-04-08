@@ -8,11 +8,11 @@
           <dependsOn>ktor-client-oauth-feature_iosTest</dependsOn>
         </dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonTest</sourceSet>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosMain</sourceSet>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosTest</sourceSet>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosMain</sourceSet>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonTest</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosX64Main</sourceSet>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>iosX64Test|:ktor-client-oauth-feature:iosX64Test|iosX64</externalSystemTestTasks>

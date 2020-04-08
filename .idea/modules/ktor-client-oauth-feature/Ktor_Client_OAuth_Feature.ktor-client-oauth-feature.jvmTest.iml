@@ -5,9 +5,9 @@
       <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false" isTestModule="true" externalProjectId=":ktor-client-oauth-feature">
         <dependsOnModuleNames>ktor-client-oauth-feature_commonTest</dependsOnModuleNames>
         <sourceSets>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.jvmMain</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonTest</sourceSet>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>jvmTest|:ktor-client-oauth-feature:jvmTest|jvm</externalSystemTestTasks>
