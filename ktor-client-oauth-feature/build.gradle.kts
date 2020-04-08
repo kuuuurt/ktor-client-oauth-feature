@@ -1,8 +1,10 @@
 plugins {
     kotlin("multiplatform")
     id("maven-publish")
-    id("com.jfrog.bintray") version "1.8.4"
+    id("com.jfrog.bintray")
 }
+
+apply(from = "publish.gradle.kts")
 
 kotlin {
     jvm()

@@ -6,8 +6,8 @@
         <dependsOnModuleNames>ktor-client-oauth-feature_commonTest</dependsOnModuleNames>
         <sourceSets>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.jvmMain</sourceSet>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonTest</sourceSet>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>jvmTest|:ktor-client-oauth-feature:jvmTest|jvm</externalSystemTestTasks>
