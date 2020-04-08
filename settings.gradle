@@ -1,0 +1,4 @@
+rootProject.name = "Ktor Client OAuth Feature"
+include ":ktor-client-oauth-feature"
+
+enableFeaturePreview('GRADLE_METADATA')
