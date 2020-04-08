@@ -8,8 +8,8 @@
           <dependsOn>ktor-client-oauth-feature_iosMain</dependsOn>
         </dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosMain</sourceSet>
           <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.commonMain</sourceSet>
+          <sourceSet>Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.iosMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />
