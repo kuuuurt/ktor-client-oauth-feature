@@ -32,12 +32,12 @@ Check the table below for the compatibilty across Kotlin versions
 | ---------- | ------- |
 | 0.1.0      | 1.3.70  |
 
-Add the jcenter repository on your Project-level gradle
+Add the repository on your Project-level gradle
 ```kotlin
 allprojects {
     repositories {
         ...
-        jcenter()
+        maven(url = "https://dl.bintray.com/kuuuurt/libraries")
     }
 }
 ```
