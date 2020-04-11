@@ -1,14 +1,12 @@
-package com.kuuurt.ktor.client.oauth.feature
+package com.kuuuurt.ktor.client.oauth.feature
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.HttpClientCall
 import io.ktor.client.features.HttpClientFeature
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.HttpRequestPipeline
-import io.ktor.client.request.header
 import io.ktor.client.request.takeFrom
 import io.ktor.client.statement.HttpReceivePipeline
-import io.ktor.client.statement.HttpResponse
 import io.ktor.client.utils.EmptyContent
 import io.ktor.http.HttpStatusCode
 import io.ktor.util.AttributeKey

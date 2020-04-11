@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="ktor-client-oauth-feature-jvm">
-    <output-path>$PROJECT_DIR$/ktor-client-oauth-feature/build/libs</output-path>
-    <root id="archive" name="ktor-client-oauth-feature-jvm.jar">
-      <element id="module-output" name="Ktor_Client_OAuth_Feature.ktor-client-oauth-feature.jvmMain" />
-    </root>
-  </artifact>
-</component>
