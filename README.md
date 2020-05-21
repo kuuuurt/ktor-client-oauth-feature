@@ -30,7 +30,7 @@ Check the table below for the compatibilty across Kotlin versions
 
 | Library    | Kotlin  |
 | ---------- | ------- |
-| 0.1.0      | 1.3.70  |
+| 0.1.+      | 1.3.70  |
 
 Add the repository on your Project-level gradle
 ```kotlin
@@ -48,7 +48,7 @@ On the module-level, add the library as a dependency
 kotlin {
     ...
     sourceSets["commonMain"].dependencies {
-        implementation("com.kuuuurt:ktor-client-oauth-feature:0.1.0")
+        implementation("com.kuuuurt:ktor-client-oauth-feature:0.1.1")
     }
 }
 ```
