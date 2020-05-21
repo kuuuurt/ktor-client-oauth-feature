@@ -50,21 +50,25 @@ class OAuthFeature(
             scope.receivePipeline.intercept(HttpReceivePipeline.After) {
                 // Request is unauthorized
                 if (subject.status == HttpStatusCode.Unauthorized && context.request.headers[RefreshKey] != true.toString()) {
-                    // Refresh the Token
-                    feature.refreshToken()
+                    try {
+                        // Refresh the Token
+                        feature.refreshToken()
 
-                    // Retry the request
-                    val call = scope.requestPipeline.execute(
-                        HttpRequestBuilder().takeFrom(context.request),
-                        EmptyContent
-                    ) as HttpClientCall
+                        // Retry the request
+                        val call = scope.requestPipeline.execute(
+                            HttpRequestBuilder().takeFrom(context.request),
+                            EmptyContent
+                        ) as HttpClientCall
 
-                    // Proceed with the new request
-                    proceedWith(call.response)
+                        // Proceed with the new request
+                        proceedWith(call.response)
 
-                    return@intercept
+                        return@intercept
+                    } catch (exception: Exception) {
+                        // If refresh fails, proceed as 401
+                    }
                 }
-                // Request is authorized
+                // Proceed as normal request
                 proceedWith(subject)
             }
         }
