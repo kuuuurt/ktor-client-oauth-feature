@@ -48,7 +48,7 @@ On the module-level, add the library as a dependency
 kotlin {
     ...
     sourceSets["commonMain"].dependencies {
-        implementation("com.kuuuurt:ktor-client-oauth-feature:0.1.1")
+        implementation("com.kuuuurt:ktor-client-oauth-feature:0.1.2")
     }
 }
 ```
